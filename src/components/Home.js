@@ -375,6 +375,7 @@ const Home = () => {
               fontWeight: 300,
               color: "black",
               textDecorationLine: "underline",
+              textAlign: "center",
             }}
           >
             bekijk je overzicht van gisteren
