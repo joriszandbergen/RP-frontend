@@ -8,6 +8,10 @@ import About from "./components/About";
 import RequireAuth from "./components/RequireAuth";
 import PersistLogin from "./components/PersistLogin";
 import { Routes, Route } from "react-router-dom";
+import BatteryPage from "./components/battery/BatteryPage";
+import SavingsPage from "./components/savings/SavingsPage";
+import SchedulePage from "./components/schedule/SchedulePage";
+import CarbonPage from "./components/carbon/CarbonPage";
 
 function App() {
   return (
@@ -26,6 +30,18 @@ function App() {
           </Route>
           <Route element={<RequireAuth />}>
             <Route path="about" element={<About />} />
+          </Route>
+          <Route element={<RequireAuth />}>
+            <Route path="battery" element={<BatteryPage />} />
+          </Route>
+          <Route element={<RequireAuth />}>
+            <Route path="savings" element={<SavingsPage />} />
+          </Route>
+          <Route element={<RequireAuth />}>
+            <Route path="schedule" element={<SchedulePage />} />
+          </Route>
+          <Route element={<RequireAuth />}>
+            <Route path="carbon" element={<CarbonPage />} />
           </Route>
         </Route>
         {/* Catch All */}

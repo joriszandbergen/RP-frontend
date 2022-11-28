@@ -31,7 +31,7 @@ const About = () => {
           fontSize: "48px",
         }}
       >
-        Hoe het werkt
+        Hoe het werkt:
       </h1>
       <div
         style={{
@@ -51,7 +51,7 @@ const About = () => {
             color: "black",
           }}
         >
-          Je laad-data wordt verzameld via de app
+          Jouw laad-data wordt verzameld via de app.
         </p>
         <img
           src={About01}
@@ -78,7 +78,7 @@ const About = () => {
             color: "black",
           }}
         >
-          slimme software maak een laadpatroon aan de hand van energieprijzen
+          Slimme software maak een laadpatroon aan de hand van energieprijzen.
         </p>
         <img
           src={About02}
@@ -106,8 +106,7 @@ const About = () => {
             paddingRight: "30px",
           }}
         >
-          met dit laadschema worden vervolgens alle effecten berekend en laten
-          zien in de app!
+          Met dit laadpatroon wordt vervolgens jouw impact berekend.
         </p>
         <img
           src={About03}
@@ -128,7 +127,8 @@ const About = () => {
           marginBottom: "200px",
         }}
       >
-        In de app krijg je elke dag een nieuw overzicht van gisteren!
+        In de app krijg je elke dag een nieuw overzicht van je impact van
+        gisteren te zien!
       </p>
     </div>
   );

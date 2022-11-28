@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
-import useAuth from "../hooks/useAuth";
-import useAxiosPrivate from "../hooks/useAxiosPrivate";
-import carbonImage from "../images/carbon.png";
+import { Link } from "react-router-dom";
+import useAuth from "../../hooks/useAuth";
+import useAxiosPrivate from "../../hooks/useAxiosPrivate";
+import batteryImage from "../../images/battery.svg";
 
-const CarbonCard = () => {
+const BatteryCard = ({ withReadMore }) => {
   const [costSavings, setCostSavings] = useState(0);
   const { auth } = useAuth();
   const axiosPrivate = useAxiosPrivate();
@@ -34,9 +35,10 @@ const CarbonCard = () => {
         display: "flex",
         alignItems: "center",
         flexDirection: "row",
+        opacity: 0.2,
       }}
     >
-      <img src={carbonImage} style={{ width: "100px" }} />
+      <img src={batteryImage} style={{ width: "120px" }} />
       <div
         style={{ display: "flex", flexDirection: "column", padding: "10px" }}
       >
@@ -47,7 +49,7 @@ const CarbonCard = () => {
             color: "black",
           }}
         >
-          CO2 emissies
+          batterij degradatie
         </p>
         <p
           style={{
@@ -56,7 +58,7 @@ const CarbonCard = () => {
             color: "#434343",
           }}
         >
-          +2.34 kg V2G
+          +0.0048% V2G
         </p>
         <p
           style={{
@@ -65,21 +67,25 @@ const CarbonCard = () => {
             color: "#434343",
           }}
         >
-          +2.64 kg normaal
+          +0.002% normaal
         </p>
-        <p
-          style={{
-            fontWeight: 300,
-            fontSize: "14px",
-            color: "black",
-            textDecorationLine: "underline",
-          }}
-        >
-          lees meer
-        </p>
+        {withReadMore && (
+          <Link to="/battery">
+            <p
+              style={{
+                fontWeight: 300,
+                fontSize: "14px",
+                color: "black",
+                textDecorationLine: "underline",
+              }}
+            >
+              lees meer
+            </p>
+          </Link>
+        )}
       </div>
     </div>
   );
 };
 
-export default CarbonCard;
+export default BatteryCard;

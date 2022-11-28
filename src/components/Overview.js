@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import SavingsCard from "./SavingsCard";
-import CarbonCard from "./CarbonCard";
-import BatteryCard from "./BatteryCard";
-import ScheduleCard from "./ScheduleCard";
+import SavingsCard from "./savings/SavingsCard";
+import CarbonCard from "./carbon/CarbonCard";
+import BatteryCard from "./battery/BatteryCard";
+import ScheduleCard from "./schedule/ScheduleCard";
 
 const Overview = () => {
   const date = new Date();
@@ -40,10 +40,10 @@ const Overview = () => {
         style={{
           fontWeight: 300,
           fontSize: "20px",
-          color: "rgba(0, 0, 0, 0.2)",
+          color: "rgba(0, 0, 0, 0.4)",
         }}
       >
-        {date.toDateString()}
+        Gisteren, {date.toDateString()}
       </p>
       <Link to="/about">
         <button
@@ -69,10 +69,10 @@ const Overview = () => {
           />
         </button>
       </Link>
-      <SavingsCard />
-      <CarbonCard />
-      <BatteryCard />
-      <ScheduleCard />
+      <SavingsCard withReadMore={true} />
+      <CarbonCard withReadMore={true} />
+      <ScheduleCard withReadMore={true} />
+      <BatteryCard withReadMore={true} />
     </div>
   );
 };

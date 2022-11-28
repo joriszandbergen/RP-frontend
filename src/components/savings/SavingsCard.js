@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
-import useAuth from "../hooks/useAuth";
-import useAxiosPrivate from "../hooks/useAxiosPrivate";
-import batteryImage from "../images/battery.png";
+import { Link } from "react-router-dom";
+import useAuth from "../../hooks/useAuth";
+import useAxiosPrivate from "../../hooks/useAxiosPrivate";
+import costImage from "../../images/cost.svg";
 
-const Card = () => {
+const Card = ({ withReadMore }) => {
   const [costSavings, setCostSavings] = useState(0);
+  const [defaultCosts, setDefaultCosts] = useState(0);
   const { auth } = useAuth();
   const axiosPrivate = useAxiosPrivate();
 
@@ -16,10 +18,12 @@ const Card = () => {
           withCredentials: true,
         });
         if (!response.data.v2gCosts) {
+          setDefaultCosts(0);
           return setCostSavings(0);
         }
         console.log(typeof response.data.v2gCosts);
         setCostSavings(response.data.v2gCosts);
+        setDefaultCosts(response.data.defaultCosts);
       } catch (err) {
         console.log(err);
       }
@@ -36,19 +40,22 @@ const Card = () => {
         flexDirection: "row",
       }}
     >
-      <img src={batteryImage} style={{ width: "100px" }} />
+      <img src={costImage} style={{ width: "120px" }} />
       <div
         style={{ display: "flex", flexDirection: "column", padding: "10px" }}
       >
-        <p
-          style={{
-            fontWeight: 300,
-            fontSize: "20px",
-            color: "black",
-          }}
-        >
-          batterij degradatie
-        </p>
+        {withReadMore && (
+          <p
+            style={{
+              fontWeight: 300,
+              fontSize: "20px",
+              color: "black",
+            }}
+          >
+            kosten van het laden
+          </p>
+        )}
+
         <p
           style={{
             fontWeight: 700,
@@ -56,7 +63,8 @@ const Card = () => {
             color: "#434343",
           }}
         >
-          +0.0048% V2G
+          €{costSavings.toFixed(2)}{" "}
+          <span style={{ color: "#D3D3D3" }}>V2G</span>
         </p>
         <p
           style={{
@@ -65,18 +73,23 @@ const Card = () => {
             color: "#434343",
           }}
         >
-          +0.002% normaal
+          €{defaultCosts.toFixed(2)}{" "}
+          <span style={{ color: "#D3D3D3" }}>normaal</span>
         </p>
-        <p
-          style={{
-            fontWeight: 300,
-            fontSize: "14px",
-            color: "black",
-            textDecorationLine: "underline",
-          }}
-        >
-          lees meer
-        </p>
+        {withReadMore && (
+          <Link to="/savings">
+            <p
+              style={{
+                fontWeight: 300,
+                fontSize: "14px",
+                color: "black",
+                textDecorationLine: "underline",
+              }}
+            >
+              lees meer
+            </p>
+          </Link>
+        )}
       </div>
     </div>
   );
