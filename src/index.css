@@ -17,7 +17,10 @@ html {
 
 body {
   min-height: 100vh;
-  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .App {
@@ -26,13 +29,12 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  overflow: hidden;
+  max-width: 500px;
+
+  background-color: white;
 }
 
 section {
-  width: 100%;
-  max-width: 400px;
-  min-height: 400px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;

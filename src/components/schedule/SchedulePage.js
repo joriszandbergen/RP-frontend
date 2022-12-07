@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { FaArrowLeft } from "react-icons/fa";
+import { FaArrowLeft, FaRegEdit } from "react-icons/fa";
 import ScheduleCard from "./ScheduleCard";
 import subDays from "date-fns/subDays";
 
@@ -43,6 +43,34 @@ const SchedulePage = () => {
         Gisteren, {date.toDateString()}
       </p>
       <ScheduleCard withReadMore={false} />
+
+      <a
+        style={{
+          fontWeight: 300,
+          fontSize: "20px",
+          color: "white",
+          background: "#24E720",
+          border: "none",
+          fontSize: "20px",
+          fontWeight: "700",
+          padding: "10px 15px",
+          cursor: "pointer",
+          marginTop: "-10px",
+          marginBottom: "20px",
+        }}
+        href="https://forms.office.com/e/B1CUeVPmVz"
+        target="_blank"
+      >
+        Vul het formulier in
+        <FaRegEdit
+          style={{
+            width: "16px",
+            height: "16px",
+            marginLeft: "10px",
+          }}
+        />
+      </a>
+
       <div
         style={{
           fontWeight: 300,

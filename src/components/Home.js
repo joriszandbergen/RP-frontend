@@ -270,62 +270,62 @@ const Home = () => {
           ></div>
         </>
       )}
+
+      {isPluggedIn ? (
+        <div
+          style={{
+            position: "relative",
+            left: 0,
+            top: 0,
+          }}
+        >
+          <img
+            src={StekkerErin}
+            alt="Stekker Erin"
+            style={{
+              maxWidth: "500px",
+              overflow: "hidden",
+              zIndex: 1,
+              position: "relative",
+              left: 0,
+              top: 0,
+            }}
+          />
+          <img
+            className={fadeProp.fade}
+            src={fade}
+            style={{
+              maxWidth: "500px",
+              overflow: "hidden",
+              zIndex: 3,
+              position: "absolute",
+              left: 0,
+              top: 0,
+            }}
+          />
+        </div>
+      ) : (
+        <img
+          src={StekkerEruit}
+          alt="Stekker Erin"
+          style={{
+            maxWidth: "500px",
+            overflow: "hidden",
+          }}
+        />
+      )}
       <div
         style={{
           display: "flex",
           alignItems: "center",
           justifyContent: "flex-end",
           flexDirection: "column",
-          flexGrow: 1,
           gap: "30px",
           marginBottom: "120px",
           overflow: "hidden",
-          width: "100%",
+          flexGrow: 1,
         }}
       >
-        {isPluggedIn ? (
-          <div
-            style={{
-              position: "relative",
-              left: 0,
-              top: 0,
-            }}
-          >
-            <img
-              src={StekkerErin}
-              alt="Stekker Erin"
-              style={{
-                width: "100vw",
-                overflow: "hidden",
-                zIndex: -1,
-                position: "relative",
-                left: 0,
-                top: 0,
-              }}
-            />
-            <img
-              className={fadeProp.fade}
-              src={fade}
-              style={{
-                width: "100vw",
-                overflow: "hidden",
-                zIndex: 3,
-                position: "absolute",
-                left: 0,
-                top: 0,
-              }}
-            />
-          </div>
-        ) : (
-          <img
-            src={StekkerEruit}
-            alt="Stekker Erin"
-            style={{
-              width: "100vw",
-              overflow: "hidden",
-            }}
-          />
-        )}
         {isPluggedIn ? (
           <button
             style={{
@@ -378,22 +378,27 @@ const Home = () => {
               textAlign: "center",
             }}
           >
-            bekijk je overzicht van gisteren
+            bekijk je overzicht <br /> van gisteren
           </p>
         </Link>
+      </div>
+      <div>
         <button
           style={{
-            position: "absolute",
-            left: "20px",
-            top: "20px",
-            background: "none",
-            border: "none",
             display: "flex",
             alignItems: "center",
-            gap: "5px",
-            margin: 0,
+            justifyContent: "center",
+            position: "absolute",
+            gap: "10px",
+            top: "0px",
+            left: "10px",
+            color: "grey",
+            background: "none",
+            border: "none",
+            zIndex: 3,
             fontWeight: 300,
             cursor: "pointer",
+            padding: "10px",
           }}
           onClick={signOut}
         >

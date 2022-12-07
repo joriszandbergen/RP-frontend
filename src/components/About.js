@@ -12,9 +12,8 @@ const About = () => {
         alignItems: "flex-start",
         justifyContent: "flex-start",
         flexDirection: "column",
-        flexGrow: 1,
-        padding: "30px 30px",
-        width: "100vw",
+
+        overflow: "hidden",
       }}
     >
       <Link to="/overview">
@@ -22,6 +21,8 @@ const About = () => {
           style={{
             width: "32px",
             height: "32px",
+            marginLeft: "30px",
+            marginTop: "30px",
           }}
         />
       </Link>
@@ -29,6 +30,7 @@ const About = () => {
         style={{
           fontWeight: 700,
           fontSize: "48px",
+          marginLeft: "30px",
         }}
       >
         Hoe het werkt:
@@ -40,8 +42,6 @@ const About = () => {
           justifyContent: "space-between",
           flexDirection: "row",
           marginTop: "100px",
-          gap: "20px",
-          width: "100%",
         }}
       >
         <p
@@ -49,6 +49,8 @@ const About = () => {
             fontWeight: 300,
             fontSize: "32px",
             color: "black",
+            marginLeft: "30px",
+            marginRight: "30px",
           }}
         >
           Jouw laad-data wordt verzameld via de app.
@@ -56,8 +58,7 @@ const About = () => {
         <img
           src={About01}
           style={{
-            width: "90vw",
-            marginRight: "-30px",
+            marginRight: "-20px",
           }}
         />
       </div>
@@ -76,6 +77,8 @@ const About = () => {
             fontWeight: 300,
             fontSize: "32px",
             color: "black",
+            marginLeft: "30px",
+            marginRight: "30px",
           }}
         >
           Slimme software maak een laadpatroon aan de hand van energieprijzen.
@@ -83,8 +86,7 @@ const About = () => {
         <img
           src={About02}
           style={{
-            width: "100vw",
-            marginLeft: "-30px",
+            width: "100%",
           }}
         />
       </div>
@@ -103,7 +105,8 @@ const About = () => {
             fontWeight: 300,
             fontSize: "32px",
             color: "black",
-            paddingRight: "30px",
+            marginLeft: "30px",
+            marginRight: "30px",
           }}
         >
           Met dit laadpatroon wordt vervolgens jouw impact berekend.
@@ -111,8 +114,7 @@ const About = () => {
         <img
           src={About03}
           style={{
-            width: "100vw",
-            marginLeft: "-30px",
+            width: "100%",
           }}
         />
       </div>
@@ -125,6 +127,8 @@ const About = () => {
           textAlign: "center",
           marginTop: "40px",
           marginBottom: "200px",
+          marginLeft: "30px",
+          marginRight: "30px",
         }}
       >
         In de app krijg je elke dag een nieuw overzicht van je impact van

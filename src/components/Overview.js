@@ -6,8 +6,10 @@ import CarbonCard from "./carbon/CarbonCard";
 import BatteryCard from "./battery/BatteryCard";
 import ScheduleCard from "./schedule/ScheduleCard";
 
+import subDays from "date-fns/subDays";
+
 const Overview = () => {
-  const date = new Date();
+  const date = subDays(new Date(), 1);
   return (
     <div
       style={{
@@ -16,8 +18,7 @@ const Overview = () => {
         justifyContent: "flex-start",
         flexDirection: "column",
         flexGrow: 1,
-        padding: "30px 30px",
-        width: "100vw",
+        padding: "30px",
       }}
     >
       <Link to="/">
@@ -72,7 +73,7 @@ const Overview = () => {
       <SavingsCard withReadMore={true} />
       <CarbonCard withReadMore={true} />
       <ScheduleCard withReadMore={true} />
-      <BatteryCard withReadMore={true} />
+      {/* <BatteryCard withReadMore={true} /> */}
     </div>
   );
 };
